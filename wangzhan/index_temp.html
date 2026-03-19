@@ -1,0 +1,1208 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宸濋闃侀夯杈ｉ閿?- 楹昏荆涓婂ご锛岀湡棣欙紒</title>
+    <style>
+        /* 鍩哄噯瀛椾綋璁剧疆 */
+        html {
+            font-size: ;
+        }
+
+        @media (max-width: ) {
+            html {
+                font-size: ;
+            }
+        }
+
+        @media (min-width: ) and (max-width: ) {
+            html {
+                font-size: ;
+            }
+        }
+
+        @media (min-width: ) and (max-width: ) {
+            html {
+                font-size: ;
+            }
+        }
+
+        @media (min-width: ) and (max-width: ) {
+            html {
+                font-size: ;
+            }
+        }
+
+        @media (min-width: ) {
+            html {
+                font-size: ;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 75rem;
+            margin: 0 auto;
+            padding: 1.875rem;
+        }
+
+        @media (min-width: ) {
+            .container {
+                padding: 2.5rem;
+            }
+        }
+
+        .section {
+            margin-bottom: 3.125rem;
+            opacity: 0;
+            transform: translateY(2.5rem);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== 绗?灞忥細棣栧睆鍚稿紩 ========== */
+        .hero {
+            text-align: center;
+            padding: 3.75rem 1.25rem 2.5rem;
+            background: linear-gradient(180deg, #ff4500 0%, #ff6b35 50%, #ff8c00 100%);
+            border-radius: ;
+            margin-bottom: ;
+            box-shadow: 0   rgba(255, 69, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) , transparent );
+            background-size:  ;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(, ) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: ;
+            text-shadow:    rgba(0, 0, 0, 0.5);
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: ;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: ;
+            margin-bottom: ;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature-tag {
+            background: rgba(0, 0, 0, 0.3);
+            padding:  ;
+            border-radius: ;
+            font-size: 0.95em;
+            backdrop-filter: blur();
+            animation: tagFloat 3s ease-in-out infinite;
+        }
+
+        .hero-feature-tag:nth-child(1) { animation-delay: 0s; }
+        .hero-feature-tag:nth-child(2) { animation-delay: 0.3s; }
+        .hero-feature-tag:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes tagFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-); }
+        }
+
+        /* ========== 閫氱敤鎸夐挳鏍峰紡 ========== */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+            color: #000;
+            padding:  ;
+            border-radius: ;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0   rgba(255, 153, 0, 0.5);
+            animation: btnPulse 2s infinite;
+        }
+
+        @keyframes btnPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0   rgba(255, 153, 0, 0.5); }
+            50% { transform: scale(1.03); box-shadow: 0   rgba(255, 153, 0, 0.7); }
+        }
+
+        .btn:hover {
+            transform: translateY(-) scale(1.05);
+            box-shadow: 0   rgba(255, 153, 0, 0.8);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            color: #ff4500;
+        }
+
+        /* ========== 绗?灞忥細椋熸鍒烘縺 ========== */
+        .appetite-section {
+            background: linear-gradient(135deg, #2d1f1f 0%, #4a2c2a 100%);
+            border-radius: ;
+            padding:  ;
+            border:  solid #ff6b35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appetite-section::before {
+            content: '馃敟';
+            position: absolute;
+            top: -;
+            right: -;
+            font-size: ;
+            opacity: 0.3;
+            animation: fireRotate 10s linear infinite;
+        }
+
+        @keyframes fireRotate {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .appetite-section h2 {
+            font-size: 2em;
+            color: #ff6b35;
+            margin-bottom: ;
+            text-align: center;
+        }
+
+        .appetite-content {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #f5f5f5;
+        }
+
+        .appetite-content p {
+            margin-bottom: ;
+            padding-left: ;
+            border-left:  solid #ff6b35;
+        }
+
+        .appetite-cta {
+            text-align: center;
+            margin-top: ;
+            font-size: 1.2em;
+            color: #ffcc00;
+            font-weight: bold;
+            animation: textShine 2s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { text-shadow: 0 0  rgba(255, 204, 0, 0.5); }
+            50% { text-shadow: 0 0  rgba(255, 204, 0, 0.9); }
+        }
+
+        /* ========== 绗?灞忥細鑷敱鎼厤 ========== */
+        .freedom-section {
+            text-align: center;
+            padding:  ;
+            background: linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 100%);
+            border-radius: ;
+            border:  solid #4caf50;
+        }
+
+        .freedom-section h2 {
+            font-size: 2em;
+            color: #4caf50;
+            margin-bottom: ;
+        }
+
+        .freedom-content {
+            font-size: 1.2em;
+            color: #e8f5e9;
+            margin-bottom: ;
+        }
+
+        .freedom-tags {
+            display: flex;
+            justify-content: center;
+            gap: ;
+            flex-wrap: wrap;
+        }
+
+        .freedom-tag {
+            background: rgba(76, 175, 80, 0.3);
+            padding:  ;
+            border-radius: ;
+            font-size: 1em;
+            border:  solid #4caf50;
+            transition: all 0.3s ease;
+        }
+
+        .freedom-tag:hover {
+            background: rgba(76, 175, 80, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* ========== 绗?灞忥細椋熸潗灞曠ず ========== */
+        .ingredients-section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #ff6b35;
+            margin-bottom: ;
+        }
+
+        .ingredients-category {
+            margin-bottom: ;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: ;
+            font-size: 1.5em;
+            color: #ff9900;
+            margin-bottom: ;
+            padding-bottom: ;
+            border-bottom:  solid rgba(255, 153, 0, 0.3);
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: ;
+        }
+
+        .ingredient-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 153, 0, 0.1) 100%);
+            padding: ;
+            border-radius: ;
+            border:  solid rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-) scale(1.03);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.4) 0%, rgba(255, 153, 0, 0.2) 100%);
+            box-shadow: 0   rgba(255, 107, 53, 0.3);
+        }
+
+        .ingredient-card p {
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        /* ========== 绗?灞忥細鍝佺墝浼樺娍 ========== */
+        .advantages-section {
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: ;
+            padding:  ;
+            border:  solid rgba(255, 107, 53, 0.4);
+        }
+
+        .advantages-section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #ff6b35;
+            margin-bottom: ;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: ;
+        }
+
+        .advantage-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+            padding: ;
+            border-radius: ;
+            text-align: center;
+            border:  solid #ff6b35;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-) scale(1.02);
+            box-shadow: 0   rgba(255, 107, 53, 0.4);
+        }
+
+        .advantage-icon {
+            font-size: 2.5em;
+            margin-bottom: ;
+            display: block;
+        }
+
+        .advantage-card h3 {
+            color: #ff9900;
+            margin-bottom: ;
+            font-size: 1.2em;
+        }
+
+        /* ========== 绗?灞忥細杈ｅ害閫夋嫨 ========== */
+        .spiciness-section {
+            text-align: center;
+            padding:  ;
+            background: linear-gradient(135deg, #3d1f1f 0%, #5c2c2c 100%);
+            border-radius: ;
+            border:  solid #ff4500;
+        }
+
+        .spiciness-section h2 {
+            font-size: 2em;
+            color: #ff4500;
+            margin-bottom: ;
+        }
+
+        .spiciness-levels {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: ;
+        }
+
+        .spice-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding:  ;
+            border-radius: ;
+            border:  solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .spice-card:hover {
+            transform: scale(1.05);
+            border-color: currentColor;
+        }
+
+        .spice-card.level-1 { color: #4caf50; border-color: rgba(76, 175, 80, 0.3); }
+        .spice-card.level-2 { color: #ff9800; border-color: rgba(255, 152, 0, 0.3); }
+        .spice-card.level-3 { color: #ff4500; border-color: rgba(255, 69, 0, 0.3); }
+        .spice-card.level-4 { color: #d32f2f; border-color: rgba(211, 47, 47, 0.3); }
+
+        .spice-emoji {
+            font-size: 3em;
+            margin-bottom: ;
+            display: block;
+        }
+
+        .spice-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: ;
+            display: block;
+        }
+
+        .spice-desc {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* ========== 绗?灞忥細杞寲寮曞 ========== */
+        .conversion-section {
+            text-align: center;
+            padding:  ;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c00 100%);
+            border-radius: ;
+            box-shadow: 0   rgba(255, 107, 53, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conversion-section::before {
+            content: '鈴?;
+            position: absolute;
+            top: ;
+            right: ;
+            font-size: ;
+            opacity: 0.3;
+            animation: clockTick 1s linear infinite;
+        }
+
+        @keyframes clockTick {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .conversion-section h2 {
+            font-size: 2.2em;
+            margin-bottom: ;
+        }
+
+        .urgent-text {
+            font-size: 1.3em;
+            margin-bottom: ;
+            line-height: 1.8;
+            animation: urgentPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes urgentPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        .conversion-buttons {
+            display: flex;
+            justify-content: center;
+            gap: ;
+            margin-top: ;
+            flex-wrap: wrap;
+        }
+
+        .conversion-buttons .btn {
+            animation: none;
+        }
+
+        .limited-time {
+            margin-top: ;
+            padding: ;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: ;
+            font-size: 0.95em;
+        }
+
+        /* ========== 绗?灞忥細鏀跺熬寮哄寲璁板繂 ========== */
+        .footer-section {
+            text-align: center;
+            padding:  ;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: ;
+            border-top:  solid #ff6b35;
+        }
+
+        .footer-tagline {
+            font-size: 1.8em;
+            color: #ff6b35;
+            margin-bottom: ;
+            font-weight: bold;
+        }
+
+        .footer-sub {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: ;
+        }
+
+        .footer-info {
+            color: #888;
+            font-size: 0.9em;
+            line-height: 2;
+        }
+
+        /* ========== PC绔紭鍖栨牱寮?========== */
+        @media (min-width: ) {
+            .container {
+                max-width: ;
+                padding:  ;
+            }
+
+            .hero {
+                padding:   ;
+            }
+
+            .hero h1 {
+                font-size: 3.5em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.5em;
+            }
+
+            .hero-features {
+                gap: ;
+            }
+
+            .hero-feature-tag {
+                padding:  ;
+                font-size: 1.1em;
+            }
+
+            .appetite-section {
+                padding:  ;
+            }
+
+            .appetite-section h2 {
+                font-size: 2.5em;
+            }
+
+            .appetite-content {
+                font-size: 1.25em;
+                max-width: ;
+                margin: 0 auto;
+            }
+
+            .freedom-section {
+                padding:  ;
+            }
+
+            .freedom-section h2 {
+                font-size: 2.5em;
+            }
+
+            .freedom-content {
+                font-size: 1.3em;
+            }
+
+            .freedom-tags {
+                gap: ;
+            }
+
+            .freedom-tag {
+                padding:  ;
+                font-size: 1.1em;
+            }
+
+            .ingredients-section h2 {
+                font-size: 2.5em;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .category-title {
+                font-size: 1.8em;
+            }
+
+            .ingredient-card p {
+                font-size: 1em;
+            }
+
+            .advantages-section {
+                padding:  ;
+            }
+
+            .advantages-section h2 {
+                font-size: 2.5em;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .advantage-card {
+                padding: ;
+            }
+
+            .advantage-icon {
+                font-size: 3em;
+            }
+
+            .advantage-card h3 {
+                font-size: 1.4em;
+            }
+
+            .spiciness-section {
+                padding:  ;
+            }
+
+            .spiciness-section h2 {
+                font-size: 2.5em;
+            }
+
+            .spiciness-levels {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .spice-card {
+                padding:  ;
+            }
+
+            .spice-emoji {
+                font-size: 3.5em;
+            }
+
+            .spice-name {
+                font-size: 1.5em;
+            }
+
+            .spice-desc {
+                font-size: 1em;
+            }
+
+            .conversion-section {
+                padding:  ;
+            }
+
+            .conversion-section h2 {
+                font-size: 2.8em;
+            }
+
+            .urgent-text {
+                font-size: 1.4em;
+                max-width: ;
+                margin: 0 auto;
+            }
+
+            .conversion-buttons {
+                gap: ;
+            }
+
+            .btn {
+                padding:  ;
+                font-size: 1.4em;
+            }
+
+            .footer-section {
+                padding:  ;
+            }
+
+            .footer-tagline {
+                font-size: 2.2em;
+            }
+
+            .footer-sub {
+                font-size: 1.4em;
+            }
+
+            .footer-info {
+                font-size: 1em;
+            }
+        }
+
+        /* 瓒呭ぇ灞忓箷浼樺寲 */
+        @media (min-width: ) {
+            .container {
+                max-width: ;
+                padding: ;
+            }
+
+            .hero {
+                padding:   ;
+            }
+
+            .hero h1 {
+                font-size: 4em;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: ;
+            }
+
+            .advantages-grid {
+                gap: ;
+            }
+
+            .spiciness-levels {
+                gap: ;
+            }
+        }
+
+        /* ========== 鍝嶅簲寮忚璁★紙绉诲姩绔級 ========== */
+        @media (max-width: ) {
+            .container {
+                max-width: 100%;
+                padding: ;
+            }
+
+            .hero {
+                padding:   ;
+                border-radius: ;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+
+            .hero-features {
+                gap: ;
+            }
+
+            .hero-feature-tag {
+                padding:  ;
+                font-size: 0.85em;
+            }
+
+            .btn {
+                padding:  ;
+                font-size: 1.1em;
+            }
+
+            .appetite-section {
+                padding:  ;
+                border-radius: ;
+            }
+
+            .appetite-section h2 {
+                font-size: 1.6em;
+            }
+
+            .appetite-content {
+                font-size: 1em;
+            }
+
+            .freedom-section {
+                padding:  ;
+                border-radius: ;
+            }
+
+            .freedom-section h2 {
+                font-size: 1.6em;
+            }
+
+            .freedom-content {
+                font-size: 1.1em;
+            }
+
+            .freedom-tags {
+                gap: ;
+            }
+
+            .freedom-tag {
+                padding:  ;
+                font-size: 0.9em;
+            }
+
+            .ingredients-section h2 {
+                font-size: 1.6em;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: ;
+            }
+
+            .category-title {
+                font-size: 1.3em;
+            }
+
+            .ingredient-card {
+                padding: ;
+            }
+
+            .ingredient-card p {
+                font-size: 0.95em;
+            }
+
+            .advantages-section {
+                padding:  ;
+                border-radius: ;
+            }
+
+            .advantages-section h2 {
+                font-size: 1.6em;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: ;
+            }
+
+            .advantage-card {
+                padding: ;
+            }
+
+            .advantage-icon {
+                font-size: 2em;
+            }
+
+            .advantage-card h3 {
+                font-size: 1.1em;
+            }
+
+            .spiciness-section {
+                padding:  ;
+                border-radius: ;
+            }
+
+            .spiciness-section h2 {
+                font-size: 1.6em;
+            }
+
+            .spiciness-levels {
+                grid-template-columns: repeat(2, 1fr);
+                gap: ;
+            }
+
+            .spice-card {
+                padding:  ;
+            }
+
+            .spice-emoji {
+                font-size: 2.5em;
+            }
+
+            .spice-name {
+                font-size: 1.2em;
+            }
+
+            .conversion-section {
+                padding:  ;
+                border-radius: ;
+            }
+
+            .conversion-section h2 {
+                font-size: 1.8em;
+            }
+
+            .urgent-text {
+                font-size: 1.1em;
+            }
+
+            .conversion-buttons {
+                flex-direction: column;
+                gap: ;
+            }
+
+            .conversion-buttons .btn {
+                width: 100%;
+            }
+
+            .limited-time {
+                font-size: 0.85em;
+                padding: ;
+            }
+
+            .footer-section {
+                padding:  ;
+                border-radius: ;
+            }
+
+            .footer-tagline {
+                font-size: 1.5em;
+            }
+
+            .footer-sub {
+                font-size: 1.1em;
+            }
+
+            .footer-info {
+                font-size: 0.85em;
+            }
+        }
+
+        /* ========== 婊氬姩瑙﹀彂鍔ㄧ敾 ========== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY();
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ========== 绗?灞忥細棣栧睆鍚稿紩 ========== -->
+        <div class="hero section" id="screen1">
+            <div class="hero-content">
+                <h1>馃敟 楹昏荆涓婂ご锛佺湡棣欙紒</h1>
+                <p class="subtitle">鐜扮倰閿呮皵 路 鏂伴矞椋熸潗 路 绉樺埗搴曟枡</p>
+                <div class="hero-features">
+                    <span class="hero-feature-tag">鐜扮倰鐜板仛</span>
+                    <span class="hero-feature-tag">椋熸潗鏂伴矞</span>
+                    <span class="hero-feature-tag">楹昏荆杩囩樉</span>
+                </div>
+                <button class="btn" onclick="scrollToOrder()">鐜板湪寮€鍚?/button>
+            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細椋熸鍒烘縺 ========== -->
+        <div class="appetite-section section" id="screen2">
+            <h2>馃嵆 婊嬪暒婊嬪暒...澶浜嗭紒</h2>
+            <div class="appetite-content">
+                <p>鐑补缈绘粴锛岃荆妞掔垎棣欙紝鏁翠釜鍘ㄦ埧閮芥槸棣欏懗</p>
+                <p>澶х伀鐚涚倰锛岄攨姘斿崄瓒筹紝姣忎竴鍙ｉ兘鐑槾</p>
+                <p>鑺辨楹诲懗鐩村啿鑴戦棬锛岃荆妞掕荆鍛崇灛闂翠笂澶?/p>
+                <p>绾㈡补鍖呰９鐫€姣忎竴鍧楅鏉愶紝鍏ュ彛鐖嗘眮</p>
+            </div>
+            <div class="appetite-cta">
+                馃構 鐪嬬潃灏遍タ浜嗗惂锛熺幇鍦ㄥ氨鐐瑰崟锛?            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細鑷敱鎼厤 ========== -->
+        <div class="freedom-section section" id="screen3">
+            <h2>馃幆 鎯冲悆浠€涔堣嚜宸遍€?/h2>
+            <p class="freedom-content">
+                鑲夌被锛熺礌鑿滐紵娴烽矞锛?br>
+                鎯冲姞浠€涔堝姞浠€涔堬紝浣犳槸鑷繁鐨勫帹绁?br>
+                姣忎竴鍙ｉ兘鏄綘鐨勪笓灞炲懗閬?            </p>
+            <div class="freedom-tags">
+                <span class="freedom-tag">馃ォ 鑲夐鍏氭渶鐖?/span>
+                <span class="freedom-tag">馃ガ 绱犻鍏氱鍒?/span>
+                <span class="freedom-tag">馃 娴烽矞涓嶈兘灏?/span>
+            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細椋熸潗灞曠ず ========== -->
+        <div class="ingredients-section section" id="screen4">
+            <h2>馃 鏂伴矞椋熸潗闅忎究鎸?/h2>
+            
+            <div class="ingredients-category">
+                <h3 class="category-title">馃ォ 鑲夌被</h3>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <p>鑲ョ墰鐗囷紝钖勫绾哥墖锛屼竴鍙ｇ垎姹?/p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>鑲ヨ偁鍦堬紝Q寮圭埥婊戯紝瓒婂毤瓒婇</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>楦＄繀涓紝澶栭叆閲屽锛屼竴鎶胯劚楠?/p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>鍗堥鑲夛紝鍘氬疄Q寮癸紝鍜搁鍏ュ懗</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingredients-category">
+                <h3 class="category-title">馃ガ 绱犺彍</h3>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <p>鍦熻眴鐗囷紝澶栫劍閲屽锛岀坏瀵嗗叆鍛?/p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>钘曠墖锛岀埥鑴嗗姹侊紝瓒婂毤瓒婇</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>閲戦拡鑿囷紝鍚搁ケ姹ゆ眮锛屼竴鍙ｇ垎姹?/p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>璞嗚厫娉★紝瀚╂粦鍏ュ懗锛屽叆鍙ｅ嵆鍖?/p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingredients-category">
+                <h3 class="category-title">馃 娴烽矞</h3>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <p>澶ц櫨浠侊紝Q寮归矞鐢滐紝鑲夊帤楗辨弧</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>楸块奔鍦堬紝鐖借剢寮圭墮锛岄矞缇庡叆鍛?/p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>铔よ湂鑲夛紝椴滅敎瀚╂粦锛屼竴鍙ｄ竴涓?/p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>锜规煶鏉★紝椴滃Q寮癸紝鍜搁鍙彛</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細鍝佺墝浼樺娍 ========== -->
+        <div class="advantages-section section" id="screen5">
+            <h2>鉁?涓轰粈涔堥€夋嫨鎴戜滑</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <span class="advantage-icon">馃ガ</span>
+                    <h3>姣忔棩鏂伴矞</h3>
+                    <p>椋熸潗褰撳ぉ閲囪喘锛屼繚璇佹柊椴滃害</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">馃尪锔?/span>
+                    <h3>绉樺埗搴曟枡</h3>
+                    <p>鍥涘窛鑰佸笀鍌呬翰鑷皟鍒讹紝姝ｅ畻宸濆懗</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">馃嵆</span>
+                    <h3>鐜扮倰鐜板仛</h3>
+                    <p>鎷掔粷棰勫埗鑿滐紝姣忎唤閮芥槸鍒氬嚭閿?/p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">馃Ъ</span>
+                    <h3>骞插噣鍗敓</h3>
+                    <p>鍚庡帹閫忔槑鎿嶄綔锛屽悆寰楁斁蹇?/p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">鈿?/span>
+                    <h3>鍑洪蹇€?/h3>
+                    <p>10鍒嗛挓鍑洪锛屼笉鐢ㄧ瓑澶箙</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">馃挵</span>
+                    <h3>鎬т环姣旈珮</h3>
+                    <p>浠锋牸浜叉皯锛屽垎閲忓疄鍦?/p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細杈ｅ害閫夋嫨 ========== -->
+        <div class="spiciness-section section" id="screen6">
+            <h2>馃尪锔?鎸戞垬浣犵殑杈ｅ懗鏋侀檺</h2>
+            <div class="spiciness-levels">
+                <div class="spice-card level-1">
+                    <span class="spice-emoji">馃尪锔?/span>
+                    <span class="spice-name">寰荆</span>
+                    <span class="spice-desc">鍒氬垰濂斤紝甯︾偣棣欏懗</span>
+                </div>
+                <div class="spice-card level-2">
+                    <span class="spice-emoji">馃尪锔忦煂讹笍</span>
+                    <span class="spice-name">涓荆</span>
+                    <span class="spice-desc">澶熻荆澶熷懗锛屾渶缁忓吀</span>
+                </div>
+                <div class="spice-card level-3">
+                    <span class="spice-emoji">馃尪锔忦煂讹笍馃尪锔?/span>
+                    <span class="spice-name">閲嶈荆</span>
+                    <span class="spice-desc">杈ｅ緱鍐掓睏锛岀埥缈诲ぉ</span>
+                </div>
+                <div class="spice-card level-4">
+                    <span class="spice-emoji">馃尪锔忦煂讹笍馃尪锔忦煍?/span>
+                    <span class="spice-name">鍦扮嫳杈?/span>
+                    <span class="spice-desc">鏁㈡寫鎴樺悧锛熸渶杈ｏ紒</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細杞寲寮曞 ========== -->
+        <div class="conversion-section section" id="screen7">
+            <h2>鈿?鍒瓑浜嗭紝鐜板湪灏辩偣锛?/h2>
+            <p class="urgent-text">
+                鍒氬嚭閿呮渶濂藉悆锛屾斁鍑夊氨鎺変环<br>
+                楹昏荆棣欏懗椋樻弧琛楋紝鍐嶄笉鏉ュ氨閿欒繃浜?br>
+                杩欎竴鍙ｏ紝鐜板湪灏辨兂鍚冿紒
+            </p>
+            <div class="conversion-buttons">
+                <button class="btn" onclick="orderNow()">绔嬪嵆鐐瑰崟</button>
+                <button class="btn btn-secondary" onclick="visitNow()">鍒板簵灏遍</button>
+            </div>
+            <div class="limited-time">
+                馃搮 钀ヤ笟鏃堕棿锛?0:00 - 22:00 | 馃搷 XX甯俋X鍖篨X琛楅亾XX鍙?            </div>
+        </div>
+
+        <!-- ========== 绗?灞忥細鏀跺熬寮哄寲璁板繂 ========== -->
+        <div class="footer-section section" id="screen8">
+            <p class="footer-tagline">馃敟 楹昏荆棣欓攨锛屼竴鍙ｅ氨涓婂ご锛?/p>
+            <p class="footer-sub">宸濋闃?路 浣犵殑鍛宠暰鍔犳补绔?/p>
+            <div class="footer-info">
+                <p>鐢佃瘽锛歑XX-XXXX-XXXX</p>
+                <p>漏 2026 宸濋闃侀夯杈ｉ閿?鐗堟潈鎵€鏈?/p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function orderNow() {
+            alert('馃帀 鎰熻阿鎮ㄧ殑閫夋嫨锛乗n\n璇烽€夋嫨鐐瑰崟鏂瑰紡锛歕n\n鈥?澶栧崠骞冲彴涓嬪崟\n鈥?寰俊灏忕▼搴忕偣鍗昞n鈥?鐢佃瘽棰勭害锛歑XX-XXXX-XXXX\n\n楹昏荆棣欏懗绛夌潃鎮紒');
+        }
+
+        function visitNow() {
+            alert('馃搷 娆㈣繋鍒板簵鍝佸皾锛乗n\n鍦板潃锛歑X甯俋X鍖篨X琛楅亾XX鍙穃n\n宸濋闃佹湡寰呮偍鐨勫厜涓达紒\n\n钀ヤ笟鏃堕棿锛?0:00 - 22:00');
+        }
+
+        function scrollToOrder() {
+            document.getElementById('screen7').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 婊氬姩鍔ㄧ敾鏁堟灉
+        document.addEventListener('DOMContentLoaded', function() {
+            // 涓烘墍鏈塻ection娣诲姞婊氬姩鍔ㄧ敾
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 涓洪鏉愬崱鐗囨坊鍔犲姩鐢?            const cards = document.querySelectorAll('.ingredient-card, .advantage-card, .spice-card');
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY()';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                cardObserver.observe(card);
+            });
+
+            // 杈ｅ害鍗＄墖鐐瑰嚮鏁堟灉
+            const spiceCards = document.querySelectorAll('.spice-card');
+            spiceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    spiceCards.forEach(c => c.style.transform = 'scale(1)');
+                    this.style.transform = 'scale(1.1)';
+                    
+                    // 娣诲姞闇囧姩鍙嶉
+                    if (navigator.vibrate) {
+                        navigator.vibrate(50);
+                    }
+                });
+            });
+        });
+
+        // 娣诲姞骞虫粦婊氬姩
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

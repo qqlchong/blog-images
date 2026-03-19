@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>川香阁麻辣香锅 - 麻辣上头，真香！</title>
+    <style>
+        /* 基准字体设置 - rem适配核心 */
+        html {
+            font-size: 16px;
+        }
+
+        /* 移动端 < 768px */
+        @media (max-width: 767px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        /* 平板端 768px - 991px */
+        @media (min-width: 768px) and (max-width: 991px) {
+            html {
+                font-size: 15px;
+            }
+        }
+
+        /* 小屏幕桌面 992px - 1199px */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        /* 中屏幕桌面 1200px - 1399px */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            html {
+                font-size: 17px;
+            }
+        }
+
+        /* 大屏幕桌面 >= 1400px */
+        @media (min-width: 1400px) {
+            html {
+                font-size: 18px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 75rem;
+            margin: 0 auto;
+            padding: 1.875rem;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                padding: 2.5rem;
+            }
+        }
+
+        .section {
+            margin-bottom: 3.125rem;
+            opacity: 0;
+            transform: translateY(2.5rem);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== 第1屏：首屏吸引 ========== */
+        .hero {
+            text-align: center;
+            padding: 3.75rem 1.25rem 2.5rem;
+            background: linear-gradient(180deg, #ff4500 0%, #ff6b35 50%, #ff8c00 100%);
+            border-radius: 1.875rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 1.25rem 3.75rem rgba(255, 69, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 1.875rem 1.875rem;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: 3.125rem 3.125rem rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 0.9375rem;
+            text-shadow: 0.1875rem 0.1875rem 0.5rem rgba(0, 0, 0, 0.5);
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 1.5625rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 1.875rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature-tag {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.625rem 1.25rem;
+            border-radius: 1.5625rem;
+            font-size: 0.95em;
+            backdrop-filter: blur(0.3125rem);
+            animation: tagFloat 3s ease-in-out infinite;
+        }
+
+        .hero-feature-tag:nth-child(1) { animation-delay: 0s; }
+        .hero-feature-tag:nth-child(2) { animation-delay: 0.3s; }
+        .hero-feature-tag:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes tagFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-0.3125rem); }
+        }
+
+        /* ========== 通用按钮样式 ========== */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+            color: #000;
+            padding: 1.125rem 3.125rem;
+            border-radius: 2.1875rem;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0.5rem 1.5625rem rgba(255, 153, 0, 0.5);
+            animation: btnPulse 2s infinite;
+        }
+
+        @keyframes btnPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0.5rem 1.5625rem rgba(255, 153, 0, 0.5); }
+            50% { transform: scale(1.03); box-shadow: 0 0.75rem 2.1875rem rgba(255, 153, 0, 0.7); }
+        }
+
+        .btn:hover {
+            transform: translateY(-0.3125rem) scale(1.05);
+            box-shadow: 0 0.9375rem 2.5rem rgba(255, 153, 0, 0.8);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            color: #ff4500;
+        }
+
+        /* ========== 第2屏：食欲刺激 ========== */
+        .appetite-section {
+            background: linear-gradient(135deg, #2d1f1f 0%, #4a2c2a 100%);
+            border-radius: 1.5625rem;
+            padding: 2.5rem 1.875rem;
+            border: 0.1875rem solid #ff6b35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appetite-section::before {
+            content: '🔥';
+            position: absolute;
+            top: -1.25rem;
+            right: -1.25rem;
+            font-size: 5rem;
+            opacity: 0.3;
+            animation: fireRotate 10s linear infinite;
+        }
+
+        @keyframes fireRotate {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .appetite-section h2 {
+            font-size: 2em;
+            color: #ff6b35;
+            margin-bottom: 1.5625rem;
+            text-align: center;
+        }
+
+        .appetite-content {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #f5f5f5;
+        }
+
+        .appetite-content p {
+            margin-bottom: 1.125rem;
+            padding-left: 0.9375rem;
+            border-left: 0.25rem solid #ff6b35;
+        }
+
+        .appetite-cta {
+            text-align: center;
+            margin-top: 1.5625rem;
+            font-size: 1.2em;
+            color: #ffcc00;
+            font-weight: bold;
+            animation: textShine 2s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { text-shadow: 0 0 1.25rem rgba(255, 204, 0, 0.5); }
+            50% { text-shadow: 0 0 2.5rem rgba(255, 204, 0, 0.9); }
+        }
+
+        /* ========== 第3屏：自由搭配 ========== */
+        .freedom-section {
+            text-align: center;
+            padding: 2.5rem 1.25rem;
+            background: linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 100%);
+            border-radius: 1.5625rem;
+            border: 0.125rem solid #4caf50;
+        }
+
+        .freedom-section h2 {
+            font-size: 2em;
+            color: #4caf50;
+            margin-bottom: 1.25rem;
+        }
+
+        .freedom-content {
+            font-size: 1.2em;
+            color: #e8f5e9;
+            margin-bottom: 1.5625rem;
+        }
+
+        .freedom-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.9375rem;
+            flex-wrap: wrap;
+        }
+
+        .freedom-tag {
+            background: rgba(76, 175, 80, 0.3);
+            padding: 0.75rem 1.5625rem;
+            border-radius: 1.25rem;
+            font-size: 1em;
+            border: 0.125rem solid #4caf50;
+            transition: all 0.3s ease;
+        }
+
+        .freedom-tag:hover {
+            background: rgba(76, 175, 80, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* ========== 第4屏：食材展示 ========== */
+        .ingredients-section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #ff6b35;
+            margin-bottom: 1.875rem;
+        }
+
+        .ingredients-category {
+            margin-bottom: 2.1875rem;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            font-size: 1.5em;
+            color: #ff9900;
+            margin-bottom: 0.9375rem;
+            padding-bottom: 0.625rem;
+            border-bottom: 0.125rem solid rgba(255, 153, 0, 0.3);
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.9375rem;
+        }
+
+        .ingredient-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 153, 0, 0.1) 100%);
+            padding: 1.25rem;
+            border-radius: 0.9375rem;
+            border: 0.0625rem solid rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-0.3125rem) scale(1.03);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.4) 0%, rgba(255, 153, 0, 0.2) 100%);
+            box-shadow: 0 0.625rem 1.875rem rgba(255, 107, 53, 0.3);
+        }
+
+        .ingredient-card p {
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        /* ========== 第5屏：品牌优势 ========== */
+        .advantages-section {
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 1.5625rem;
+            padding: 2.5rem 1.875rem;
+            border: 0.125rem solid rgba(255, 107, 53, 0.4);
+        }
+
+        .advantages-section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #ff6b35;
+            margin-bottom: 1.875rem;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .advantage-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+            padding: 1.5625rem;
+            border-radius: 0.9375rem;
+            text-align: center;
+            border: 0.125rem solid #ff6b35;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-0.5rem) scale(1.02);
+            box-shadow: 0 0.9375rem 2.5rem rgba(255, 107, 53, 0.4);
+        }
+
+        .advantage-icon {
+            font-size: 2.5em;
+            margin-bottom: 0.625rem;
+            display: block;
+        }
+
+        .advantage-card h3 {
+            color: #ff9900;
+            margin-bottom: 0.5rem;
+            font-size: 1.2em;
+        }
+
+        /* ========== 第6屏：辣度选择 ========== */
+        .spiciness-section {
+            text-align: center;
+            padding: 2.5rem 1.25rem;
+            background: linear-gradient(135deg, #3d1f1f 0%, #5c2c2c 100%);
+            border-radius: 1.5625rem;
+            border: 0.125rem solid #ff4500;
+        }
+
+        .spiciness-section h2 {
+            font-size: 2em;
+            color: #ff4500;
+            margin-bottom: 1.875rem;
+        }
+
+        .spiciness-levels {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.9375rem;
+        }
+
+        .spice-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5625rem 0.9375rem;
+            border-radius: 0.9375rem;
+            border: 0.125rem solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .spice-card:hover {
+            transform: scale(1.05);
+            border-color: currentColor;
+        }
+
+        .spice-card.level-1 { color: #4caf50; border-color: rgba(76, 175, 80, 0.3); }
+        .spice-card.level-2 { color: #ff9800; border-color: rgba(255, 152, 0, 0.3); }
+        .spice-card.level-3 { color: #ff4500; border-color: rgba(255, 69, 0, 0.3); }
+        .spice-card.level-4 { color: #d32f2f; border-color: rgba(211, 47, 47, 0.3); }
+
+        .spice-emoji {
+            font-size: 3em;
+            margin-bottom: 0.625rem;
+            display: block;
+        }
+
+        .spice-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .spice-desc {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* ========== 第7屏：转化引导 ========== */
+        .conversion-section {
+            text-align: center;
+            padding: 3.125rem 1.875rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c00 100%);
+            border-radius: 1.5625rem;
+            box-shadow: 0 1.25rem 3.75rem rgba(255, 107, 53, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conversion-section::before {
+            content: '⏰';
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 3.75rem;
+            opacity: 0.3;
+            animation: clockTick 1s linear infinite;
+        }
+
+        @keyframes clockTick {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .conversion-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 1.25rem;
+        }
+
+        .urgent-text {
+            font-size: 1.3em;
+            margin-bottom: 1.5625rem;
+            line-height: 1.8;
+            animation: urgentPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes urgentPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        .conversion-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-top: 1.875rem;
+            flex-wrap: wrap;
+        }
+
+        .conversion-buttons .btn {
+            animation: none;
+        }
+
+        .limited-time {
+            margin-top: 1.5625rem;
+            padding: 0.9375rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0.625rem;
+            font-size: 0.95em;
+        }
+
+        /* ========== 第8屏：收尾强化记忆 ========== */
+        .footer-section {
+            text-align: center;
+            padding: 2.5rem 1.25rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 1.5625rem;
+            border-top: 0.1875rem solid #ff6b35;
+        }
+
+        .footer-tagline {
+            font-size: 1.8em;
+            color: #ff6b35;
+            margin-bottom: 0.9375rem;
+            font-weight: bold;
+        }
+
+        .footer-sub {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-info {
+            color: #888;
+            font-size: 0.9em;
+            line-height: 2;
+        }
+
+        /* ========== PC端优化样式 >= 768px ========== */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 68.75rem;
+                padding: 2.5rem 1.875rem;
+            }
+
+            .hero {
+                padding: 5rem 2.5rem 3.125rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.5em;
+            }
+
+            .hero-features {
+                gap: 1.875rem;
+            }
+
+            .hero-feature-tag {
+                padding: 0.75rem 1.875rem;
+                font-size: 1.1em;
+            }
+
+            .appetite-section {
+                padding: 3.125rem 2.5rem;
+            }
+
+            .appetite-section h2 {
+                font-size: 2.5em;
+            }
+
+            .appetite-content {
+                font-size: 1.25em;
+                max-width: 50rem;
+                margin: 0 auto;
+            }
+
+            .freedom-section {
+                padding: 3.125rem 2.5rem;
+            }
+
+            .freedom-section h2 {
+                font-size: 2.5em;
+            }
+
+            .freedom-content {
+                font-size: 1.3em;
+            }
+
+            .freedom-tags {
+                gap: 1.25rem;
+            }
+
+            .freedom-tag {
+                padding: 0.9375rem 2.1875rem;
+                font-size: 1.1em;
+            }
+
+            .ingredients-section h2 {
+                font-size: 2.5em;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .category-title {
+                font-size: 1.8em;
+            }
+
+            .ingredient-card p {
+                font-size: 1em;
+            }
+
+            .advantages-section {
+                padding: 3.125rem 2.5rem;
+            }
+
+            .advantages-section h2 {
+                font-size: 2.5em;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .advantage-card {
+                padding: 1.875rem;
+            }
+
+            .advantage-icon {
+                font-size: 3em;
+            }
+
+            .advantage-card h3 {
+                font-size: 1.4em;
+            }
+
+            .spiciness-section {
+                padding: 3.125rem 2.5rem;
+            }
+
+            .spiciness-section h2 {
+                font-size: 2.5em;
+            }
+
+            .spiciness-levels {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .spice-card {
+                padding: 2.1875rem 1.25rem;
+            }
+
+            .spice-emoji {
+                font-size: 3.5em;
+            }
+
+            .spice-name {
+                font-size: 1.5em;
+            }
+
+            .spice-desc {
+                font-size: 1em;
+            }
+
+            .conversion-section {
+                padding: 3.75rem 2.5rem;
+            }
+
+            .conversion-section h2 {
+                font-size: 2.8em;
+            }
+
+            .urgent-text {
+                font-size: 1.4em;
+                max-width: 50rem;
+                margin: 0 auto;
+            }
+
+            .conversion-buttons {
+                gap: 1.875rem;
+            }
+
+            .btn {
+                padding: 1.25rem 3.75rem;
+                font-size: 1.4em;
+            }
+
+            .footer-section {
+                padding: 3.125rem 2.5rem;
+            }
+
+            .footer-tagline {
+                font-size: 2.2em;
+            }
+
+            .footer-sub {
+                font-size: 1.4em;
+            }
+
+            .footer-info {
+                font-size: 1em;
+            }
+        }
+
+        /* 超大屏幕优化 >= 1400px */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 87.5rem;
+                padding: 3.125rem;
+            }
+
+            .hero {
+                padding: 6.25rem 3.125rem 3.75rem;
+            }
+
+            .hero h1 {
+                font-size: 4em;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+            }
+
+            .advantages-grid {
+                gap: 1.5625rem;
+            }
+
+            .spiciness-levels {
+                gap: 1.25rem;
+            }
+        }
+
+        /* ========== 响应式设计（移动端）< 767px ========== */
+        @media (max-width: 767px) {
+            .container {
+                max-width: 100%;
+                padding: 0.9375rem;
+            }
+
+            .hero {
+                padding: 3.125rem 0.9375rem 1.875rem;
+                border-radius: 1.25rem;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+
+            .hero-features {
+                gap: 0.625rem;
+            }
+
+            .hero-feature-tag {
+                padding: 0.5rem 0.9375rem;
+                font-size: 0.85em;
+            }
+
+            .btn {
+                padding: 0.9375rem 2.5rem;
+                font-size: 1.1em;
+            }
+
+            .appetite-section {
+                padding: 1.875rem 1.25rem;
+                border-radius: 1.25rem;
+            }
+
+            .appetite-section h2 {
+                font-size: 1.6em;
+            }
+
+            .appetite-content {
+                font-size: 1em;
+            }
+
+            .freedom-section {
+                padding: 1.875rem 0.9375rem;
+                border-radius: 1.25rem;
+            }
+
+            .freedom-section h2 {
+                font-size: 1.6em;
+            }
+
+            .freedom-content {
+                font-size: 1.1em;
+            }
+
+            .freedom-tags {
+                gap: 0.625rem;
+            }
+
+            .freedom-tag {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.9em;
+            }
+
+            .ingredients-section h2 {
+                font-size: 1.6em;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.625rem;
+            }
+
+            .category-title {
+                font-size: 1.3em;
+            }
+
+            .ingredient-card {
+                padding: 0.9375rem;
+            }
+
+            .ingredient-card p {
+                font-size: 0.95em;
+            }
+
+            .advantages-section {
+                padding: 1.875rem 1.25rem;
+                border-radius: 1.25rem;
+            }
+
+            .advantages-section h2 {
+                font-size: 1.6em;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.9375rem;
+            }
+
+            .advantage-card {
+                padding: 1.25rem;
+            }
+
+            .advantage-icon {
+                font-size: 2em;
+            }
+
+            .advantage-card h3 {
+                font-size: 1.1em;
+            }
+
+            .spiciness-section {
+                padding: 1.875rem 0.9375rem;
+                border-radius: 1.25rem;
+            }
+
+            .spiciness-section h2 {
+                font-size: 1.6em;
+            }
+
+            .spiciness-levels {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.625rem;
+            }
+
+            .spice-card {
+                padding: 1.25rem 0.9375rem;
+            }
+
+            .spice-emoji {
+                font-size: 2.5em;
+            }
+
+            .spice-name {
+                font-size: 1.2em;
+            }
+
+            .conversion-section {
+                padding: 2.5rem 1.25rem;
+                border-radius: 1.25rem;
+            }
+
+            .conversion-section h2 {
+                font-size: 1.8em;
+            }
+
+            .urgent-text {
+                font-size: 1.1em;
+            }
+
+            .conversion-buttons {
+                flex-direction: column;
+                gap: 0.9375rem;
+            }
+
+            .conversion-buttons .btn {
+                width: 100%;
+            }
+
+            .limited-time {
+                font-size: 0.85em;
+                padding: 0.75rem;
+            }
+
+            .footer-section {
+                padding: 1.875rem 0.9375rem;
+                border-radius: 1.25rem;
+            }
+
+            .footer-tagline {
+                font-size: 1.5em;
+            }
+
+            .footer-sub {
+                font-size: 1.1em;
+            }
+
+            .footer-info {
+                font-size: 0.85em;
+            }
+        }
+
+        /* ========== 滚动触发动画 ========== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(1.875rem);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ========== 第1屏：首屏吸引 ========== -->
+        <div class="hero section" id="screen1">
+            <div class="hero-content">
+                <h1>🔥 麻辣上头！真香！</h1>
+                <p class="subtitle">现炒锅气 · 新鲜食材 · 秘制底料</p>
+                <div class="hero-features">
+                    <span class="hero-feature-tag">现炒现做</span>
+                    <span class="hero-feature-tag">食材新鲜</span>
+                    <span class="hero-feature-tag">麻辣过瘾</span>
+                </div>
+                <button class="btn" onclick="scrollToOrder()">现在开吃</button>
+            </div>
+        </div>
+
+        <!-- ========== 第2屏：食欲刺激 ========== -->
+        <div class="appetite-section section" id="screen2">
+            <h2>🍳 滋啦滋啦...太香了！</h2>
+            <div class="appetite-content">
+                <p>热油翻滚，辣椒爆香，整个厨房都是香味</p>
+                <p>大火猛炒，锅气十足，每一口都烫嘴</p>
+                <p>花椒麻味直冲脑门，辣椒辣味瞬间上头</p>
+                <p>红油包裹着每一块食材，入口爆汁</p>
+            </div>
+            <div class="appetite-cta">
+                😋 看着就饿了吧？现在就点单！
+            </div>
+        </div>
+
+        <!-- ========== 第3屏：自由搭配 ========== -->
+        <div class="freedom-section section" id="screen3">
+            <h2>🎯 想吃什么自己选</h2>
+            <p class="freedom-content">
+                肉类？素菜？海鲜？<br>
+                想加什么加什么，你是自己的厨神<br>
+                每一口都是你的专属味道
+            </p>
+            <div class="freedom-tags">
+                <span class="freedom-tag">🥩 肉食党最爱</span>
+                <span class="freedom-tag">🥬 素食党福利</span>
+                <span class="freedom-tag">🦐 海鲜不能少</span>
+            </div>
+        </div>
+
+        <!-- ========== 第4屏：食材展示 ========== -->
+        <div class="ingredients-section section" id="screen4">
+            <h2>🥗 新鲜食材随便挑</h2>
+            
+            <div class="ingredients-category">
+                <h3 class="category-title">🥩 肉类</h3>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <p>肥牛片，薄如纸片，一口爆汁</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>肥肠圈，Q弹爽滑，越嚼越香</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>鸡翅中，外酥里嫩，一抿脱骨</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>午餐肉，厚实Q弹，咸香入味</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingredients-category">
+                <h3 class="category-title">🥬 素菜</h3>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <p>土豆片，外焦里嫩，绵密入味</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>藕片，爽脆多汁，越嚼越香</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>金针菇，吸饱汤汁，一口爆汁</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>豆腐泡，嫩滑入味，入口即化</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingredients-category">
+                <h3 class="category-title">🦐 海鲜</h3>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <p>大虾仁，Q弹鲜甜，肉厚饱满</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>鱿鱼圈，爽脆弹牙，鲜美入味</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>蛤蜊肉，鲜甜嫩滑，一口一个</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <p>蟹柳条，鲜嫩Q弹，咸香可口</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 第5屏：品牌优势 ========== -->
+        <div class="advantages-section section" id="screen5">
+            <h2>✨ 为什么选择我们</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <span class="advantage-icon">🥬</span>
+                    <h3>每日新鲜</h3>
+                    <p>食材当天采购，保证新鲜度</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">🌶️</span>
+                    <h3>秘制底料</h3>
+                    <p>四川老师傅亲自调制，正宗川味</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">🍳</span>
+                    <h3>现炒现做</h3>
+                    <p>拒绝预制菜，每份都是刚出锅</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">🧼</span>
+                    <h3>干净卫生</h3>
+                    <p>后厨透明操作，吃得放心</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">⚡</span>
+                    <h3>出餐快速</h3>
+                    <p>10分钟出餐，不用等太久</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">💰</span>
+                    <h3>性价比高</h3>
+                    <p>价格亲民，分量实在</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 第6屏：辣度选择 ========== -->
+        <div class="spiciness-section section" id="screen6">
+            <h2>🌶️ 挑战你的辣味极限</h2>
+            <div class="spiciness-levels">
+                <div class="spice-card level-1">
+                    <span class="spice-emoji">🌶️</span>
+                    <span class="spice-name">微辣</span>
+                    <span class="spice-desc">刚刚好，带点香味</span>
+                </div>
+                <div class="spice-card level-2">
+                    <span class="spice-emoji">🌶️🌶️</span>
+                    <span class="spice-name">中辣</span>
+                    <span class="spice-desc">够辣够味，最经典</span>
+                </div>
+                <div class="spice-card level-3">
+                    <span class="spice-emoji">🌶️🌶️🌶️</span>
+                    <span class="spice-name">重辣</span>
+                    <span class="spice-desc">辣得冒汗，爽翻天</span>
+                </div>
+                <div class="spice-card level-4">
+                    <span class="spice-emoji">🌶️🌶️🌶️🔥</span>
+                    <span class="spice-name">地狱辣</span>
+                    <span class="spice-desc">敢挑战吗？最辣！</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 第7屏：转化引导 ========== -->
+        <div class="conversion-section section" id="screen7">
+            <h2>⚡ 别等了，现在就点！</h2>
+            <p class="urgent-text">
+                刚出锅最好吃，放凉就掉价<br>
+                麻辣香味飘满街，再不来就错过了<br>
+                这一口，现在就想吃！
+            </p>
+            <div class="conversion-buttons">
+                <button class="btn" onclick="orderNow()">立即点单</button>
+                <button class="btn btn-secondary" onclick="visitNow()">到店就餐</button>
+            </div>
+            <div class="limited-time">
+                📅 营业时间：10:00 - 22:00 | 📍 XX市XX区XX街道XX号
+            </div>
+        </div>
+
+        <!-- ========== 第8屏：收尾强化记忆 ========== -->
+        <div class="footer-section section" id="screen8">
+            <p class="footer-tagline">🔥 麻辣香锅，一口就上头！</p>
+            <p class="footer-sub">川香阁 · 你的味蕾加油站</p>
+            <div class="footer-info">
+                <p>电话：XXX-XXXX-XXXX</p>
+                <p>© 2026 川香阁麻辣香锅 版权所有</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function orderNow() {
+            alert('🎉 感谢您的选择！\n\n请选择点单方式：\n\n• 外卖平台下单\n• 微信小程序点单\n• 电话预约：XXX-XXXX-XXXX\n\n麻辣香味等着您！');
+        }
+
+        function visitNow() {
+            alert('📍 欢迎到店品尝！\n\n地址：XX市XX区XX街道XX号\n\n川香阁期待您的光临！\n\n营业时间：10:00 - 22:00');
+        }
+
+        function scrollToOrder() {
+            document.getElementById('screen7').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有section添加滚动动画
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 为食材卡片添加动画
+            const cards = document.querySelectorAll('.ingredient-card, .advantage-card, .spice-card');
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(1.25rem)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                cardObserver.observe(card);
+            });
+
+            // 辣度卡片点击效果
+            const spiceCards = document.querySelectorAll('.spice-card');
+            spiceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    spiceCards.forEach(c => c.style.transform = 'scale(1)');
+                    this.style.transform = 'scale(1.1)';
+                    
+                    // 添加震动反馈
+                    if (navigator.vibrate) {
+                        navigator.vibrate(50);
+                    }
+                });
+            });
+        });
+
+        // 添加平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
