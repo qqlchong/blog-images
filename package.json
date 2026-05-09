@@ -1,0 +1,23 @@
+{
+  "name": "blog-images",
+  "version": "1.0.0",
+  "description": "用来储存图片等静态文件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qqlchong/blog-images.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qqlchong/blog-images/issues"
+  },
+  "homepage": "https://github.com/qqlchong/blog-images#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
