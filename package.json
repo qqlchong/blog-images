@@ -17,7 +17,7 @@
     "url": "https://github.com/qqlchong/blog-images/issues"
   },
   "homepage": "https://github.com/qqlchong/blog-images#readme",
-  "dependencies": {
+  "devDependencies": {
     "sharp": "^0.34.5"
   }
 }
